@@ -11,7 +11,6 @@ function App() {
         {id: 2, title: 'CSS', isDone: true},
         {id: 3, title: 'JS', isDone: true},
         {id: 4, title: 'React', isDone: false},
-        {id: 5, title: 'React', isDone: false},
     ])
 
     let [filter, setFilter] = useState<FilterValueType>('all')
