@@ -6,3 +6,20 @@
 .App > div {
   margin-right: 50px;
 }
+
+
+.isDone {
+  background-color: aquamarine;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+
+.error-input{
+border: 1px solid red
+}
+
+.error-message {
+  color: red;
+}
