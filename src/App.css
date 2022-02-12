@@ -1,25 +1,34 @@
-/*.App {*/
-/*  padding: 30px;*/
-/*  display: flex;*/
-/*}*/
+.App {
+    padding: 30px;
+    display: flex;
+}
 
-/*.App > div {*/
-/*  margin-right: 50px;*/
-/*}*/
+.App > div {
+    margin-right: 50px;
+}
 
 
-/*.isDone {*/
-/*  background-color: aquamarine;*/
-/*}*/
+.isDone {
+    background-color: aquamarine;
+}
 
-/*.opacity {*/
-/*  opacity: 0.5;*/
-/*}*/
+.opacity {
+    opacity: 0.5;
+}
 
-/*.error-input{*/
-/*border: 1px solid red*/
-/*}*/
+.error-input{
+    border: 1px solid red
+}
 
-/*.error-message {*/
-/*  color: red;*/
-/*}*/
+.error-message {
+    color: red;
+}
+.button2 {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+.button3  {
+    color: red;
+    border-radius: 5px;
+}
+

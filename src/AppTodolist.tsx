@@ -78,35 +78,34 @@ setTasks({...tasks, [todolistId]: tasks[todolistId].map(    t => t.id === taskId
         setTodolist(todolist.map(tl => tl.id === todolistId ? {...tl, title: title} : tl))
     }
 
-    const mapTodolist = todolist.map((tl) => {
-        let taskForTodoList = tasks[tl.id];
-
-        if (tl.filter === 'Completed') {
-            taskForTodoList = tasks[tl.id].filter(t => t.isDone)
-        }
-        if (tl.filter === 'Active') {
-            taskForTodoList = taskForTodoList.filter(t => !t.isDone)
-        }
-        return <TodoList
-            todolistId={tl.id}
-            key={tl.id}
-            title={tl.title}
-            tasks={taskForTodoList}
-            removeTask={removeTask}
-            changeFilter={changeFilter}
-            addNewTask={addNewTask}
-            changeTaskStatus={changeTaskStatus}
-            filter={tl.filter}
-            removeTodolist={removeTodolist}
-            editTaskTitle={editTaskTodolist}
-            editTodolistTitle={editTodolistTitle}
-        />
-    })
 
     return (
         <div className="App">
 
-            {mapTodolist}
+            {todolist.map((tl) => {
+                let taskForTodoList = tasks[tl.id];
+
+                if (tl.filter === 'Completed') {
+                    taskForTodoList = tasks[tl.id].filter(t => t.isDone)
+                }
+                if (tl.filter === 'Active') {
+                    taskForTodoList = taskForTodoList.filter(t => !t.isDone)
+                }
+                return <TodoList
+                    todolistId={tl.id}
+                    key={tl.id}
+                    title={tl.title}
+                    tasks={taskForTodoList}
+                    removeTask={removeTask}
+                    changeFilter={changeFilter}
+                    addNewTask={addNewTask}
+                    changeTaskStatus={changeTaskStatus}
+                    filter={tl.filter}
+                    removeTodolist={removeTodolist}
+                    editTaskTitle={editTaskTodolist}
+                    editTodolistTitle={editTodolistTitle}
+                />
+            })}
             <AddItemForm addItem={addTodolist}/>
 
         </div>
