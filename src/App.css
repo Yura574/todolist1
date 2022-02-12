@@ -23,3 +23,12 @@ border: 1px solid red
 .error-message {
   color: red;
 }
+.button2 {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+.button3  {
+  color: red;
+  border-radius: 5px;
+}
+
