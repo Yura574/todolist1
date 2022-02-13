@@ -1,6 +1,13 @@
+body{
+    background: url("APP/Header/image/spaceBackground.jpg") no-repeat;
+    background-size:100% ;
+    /*cursor: pointer;*/
+}
 .App {
     padding: 30px;
     display: flex;
+    /*flex-direction: column;*/
+    /*border: 1px solid black;*/
 }
 
 .App > div {
@@ -9,7 +16,9 @@
 
 
 .isDone {
-    background-color: aquamarine;
+    background: none;
+    border: 1px solid black;
+    color: blue;
 }
 
 .opacity {
@@ -23,12 +32,7 @@
 .error-message {
     color: red;
 }
-.button2 {
-    border: 2px solid red;
-    border-radius: 5px;
-}
-.button3  {
-    color: red;
-    border-radius: 5px;
+button{
+    cursor: pointer;
 }
 

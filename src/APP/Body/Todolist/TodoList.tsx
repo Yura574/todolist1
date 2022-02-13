@@ -1,9 +1,12 @@
 import React from "react";
-import {FilterValueType} from "./AppTodolist";
-import {AddItemForm} from "./CommonComponent/AddItemForm/AddItemForm";
-import {EditableSpan} from "./CommonComponent/EditableSpan/EditableSpan";
-import {TasksComponent} from "./CommonComponent/TaskComponent/TasksComponent";
-import {Button} from "./CommonComponent/Button/Button";
+import {FilterValueType} from "../AppTodolist";
+import {AddItemForm} from "../../../CommonComponent/AddItemForm/AddItemForm";
+import {EditableSpan} from "../../../CommonComponent/EditableSpan/EditableSpan";
+import {TasksComponent} from "../../../CommonComponent/TaskComponent/TasksComponent";
+import {Button} from "../../../CommonComponent/Button/MyButton/Button";
+import deleteBasket from '../../Header/image/deleteBasket.svg'
+import classes from "../../../CommonComponent/Button/MyButton/Button.module.css";
+import classTodo from './Todolist.module.css'
 
 export type  PropsType = {
     id: string,
@@ -37,11 +40,12 @@ export function TodoList(props: TodoList) {
 
     return (
 
-        <div>
+        <div className={classTodo.todoBody}>
             <h1><EditableSpan callback={editTodolistTitle} title={props.title}/>
                 <Button nameButton={'x'}
                         callback={() => props.removeTodolist(props.todolistId)}
-                        classes={''}
+                        classes={'button_svg'}
+                        img={deleteBasket}
                 />
             </h1>
 
@@ -58,15 +62,15 @@ export function TodoList(props: TodoList) {
                 <Button filter={props.filter}
                         nameButton={'All'}
                         callback={() => setFilter('All')}
-                        classes={'buttonAll'}/>
+                        classes={`${classes.btn} ${classes.bubble}   ${classes.left} `}/>
                 <Button filter={props.filter}
                         nameButton={'Active'}
                         callback={() => setFilter('Active')}
-                        classes={'button2'}/>
+                        classes={`${classes.buttonActive} ${classes.btn} ${classes.bubble}   ${classes.left}` }/>
                 <Button filter={props.filter}
                         nameButton={'Completed'}
                         callback={() => setFilter('Completed')}
-                        classes={'button3'}/>
+                        classes={`${classes.buttonCompleted}  ${classes.btn} ${classes.bubble}   ${classes.left}`}/>
             </div>
         </div>
     )

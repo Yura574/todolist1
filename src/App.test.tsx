@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import AppTodolist from './AppTodolist';
+import AppTodolist from './APP/Body/AppTodolist';
 
 test('renders learn react link', () => {
   render(<AppTodolist />);

@@ -1,0 +1,10 @@
+.todoBody {
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ebecf0;
+    margin-left: 10px;
+}

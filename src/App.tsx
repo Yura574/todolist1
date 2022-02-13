@@ -1,14 +1,12 @@
-import AppTodolist from "./AppTodolist";
-import {Header} from "./Header/Header";
-import img from './Header/image/plus.png'
-import deleteIcon from "./Header/image/deleteIcon.svg"
+import AppTodolist from "./APP/Body/AppTodolist";
+import {Header} from "./APP/Header/Header";
+
 
 export function App() {
     return (
         <div>
             <Header/>
             <AppTodolist/>
-            <button><img src={deleteIcon} alt={''} style={{width: '20px'}}/></button>
         </div>
     )
 }

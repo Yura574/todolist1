@@ -1,11 +1,10 @@
 import React from "react";
 import {EditableSpan} from "../EditableSpan/EditableSpan";
-import {PropsType} from "../../TodoList";
+import {PropsType} from "../../APP/Body/Todolist/TodoList";
 import {Checkbox} from "../Checkbox/Checkbox";
-import {Button} from "../Button/Button";
+import {Button} from "../Button/MyButton/Button";
 
-import deleteBasket from '../../Header/image/deleteBasket.svg'
-import img from '../../Header/image/plus.png'
+import deleteBasket from '../../APP/Header/image/deleteBasket.svg'
 import './TasksComponent.css'
 
 type TasksComponentType = {

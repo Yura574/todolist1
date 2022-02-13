@@ -1,6 +1,5 @@
 .button_svg {
     width: 30px;
-    color: red;
     border: none;
     background: none;
     padding-bottom: 2px;
@@ -8,5 +7,6 @@
 }
 
 .button_svg:active{
-    transform: scale(0.8);
+    transform: translate(0,3px) scale(0.8);
+    fill: red;
 }

@@ -1,0 +1,14 @@
+.addButton{
+    width: 30px;
+    border: none;
+    background: none;
+    padding-bottom: 2px;
+    transform: translate(0,7px);
+}
+
+
+.addButton:active{
+    transform:translate(0,7px) scale(0.9);
+    fill: red;
+}
+
