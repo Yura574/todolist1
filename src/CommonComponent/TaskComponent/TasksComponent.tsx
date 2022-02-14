@@ -3,7 +3,6 @@ import {EditableSpan} from "../EditableSpan/EditableSpan";
 import {PropsType} from "../../APP/Body/Todolist/TodoList";
 import {Checkbox} from "../Checkbox/Checkbox";
 import {Button} from "../Button/MyButton/Button";
-
 import deleteBasket from '../../APP/Header/image/deleteBasket.svg'
 import './TasksComponent.css'
 

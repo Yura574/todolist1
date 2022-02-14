@@ -10,3 +10,8 @@
     transform: translate(0,3px) scale(0.8);
     fill: red;
 }
+.button_svg:hover{
+    /*border: 5px rgba(0,0,0, 0.1) solid;*/
+    border-radius: 20%;
+    background: rgba(0,0,0, 0.1);
+}
