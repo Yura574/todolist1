@@ -1,12 +1,12 @@
-import AppTodolist from "./APP/Body/AppTodolist";
 import {Header} from "./APP/Header/Header";
+import AppTodolistWithReducer from "./APP/Body/AppTodolistWithReducer";
 
 
 export function App() {
     return (
         <div>
             <Header/>
-            <AppTodolist/>
+            <AppTodolistWithReducer/>
         </div>
     )
 }

@@ -10,21 +10,21 @@ type TasksComponentType = {
     removeTask: (id: string, todolistId: string) => void
     tasks: Array<PropsType>
     todolistId: string
-    changeTaskStatus: (taskId: string, isDone: boolean, todolistId: string) => void
+    changeTaskStatus: (todolistId: string, taskId: string, isDone: boolean) => void
     editTaskTitle: (todolistId: string, id: string, title: string) => void
 }
 
 
 export function TasksComponent(props: TasksComponentType) {
+    debugger
     return (
-
         <div>
             {props.tasks.map(t => {
                 const deleteTask = () => {
-                    props.removeTask(t.id, props.todolistId)
+                    props.removeTask(props.todolistId, t.id)
                 }
                 const changeStatus = (id: string, isDone: boolean) => {
-                    props.changeTaskStatus(id, isDone, props.todolistId)
+                    props.changeTaskStatus(props.todolistId, id, isDone)
                 }
                 const editTodoTitle = (title: string) => {
                     props.editTaskTitle(props.todolistId, title, t.id)

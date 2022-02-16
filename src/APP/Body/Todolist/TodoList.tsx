@@ -1,5 +1,4 @@
 import React from "react";
-import {FilterValueType} from "../AppTodolist";
 import {AddItemForm} from "../../../CommonComponent/AddItemForm/AddItemForm";
 import {EditableSpan} from "../../../CommonComponent/EditableSpan/EditableSpan";
 import {TasksComponent} from "../../../CommonComponent/TaskComponent/TasksComponent";
@@ -7,6 +6,7 @@ import {Button} from "../../../CommonComponent/Button/MyButton/Button";
 import deleteBasket from '../../Header/image/deleteBasket.svg'
 import classes from "../../../CommonComponent/Button/MyButton/Button.module.css";
 import classTodo from './Todolist.module.css'
+import {FilterValueType} from "../AppTodolistWithReducer";
 
 export type  PropsType = {
     id: string,
@@ -17,10 +17,10 @@ export type  PropsType = {
 type TodoList = {
     title: string,
     tasks: Array<PropsType>
-    removeTask: (id: string, todolistId: string) => void
-    changeFilter: (value: FilterValueType, todolistId: string) => void
+    removeTask: (todolistId: string, id: string) => void
+    changeFilter: (todolistId: string, value: FilterValueType) => void
     addNewTask: (title: string, todolistId: string) => void
-    changeTaskStatus: (taskId: string, isDone: boolean, todolistId: string) => void
+    changeTaskStatus: (todolistId: string, taskId: string, isDone: boolean) => void
     filter: FilterValueType
     todolistId: string
     removeTodolist: (todolistId: string) => void
@@ -32,11 +32,11 @@ type TodoList = {
 export function TodoList(props: TodoList) {
 
     const setFilter = (name: FilterValueType) => {
-        props.changeFilter(name, props.todolistId)
+        props.changeFilter(props.todolistId, name)
     }
 
     const editTodolistTitle = (title: string) => props.editTodolistTitle(props.todolistId, title)
-    const addTask = (title: string) => props.addNewTask(title, props.todolistId)
+    const addTask = (title: string) => props.addNewTask(props.todolistId, title)
 
     return (
 
