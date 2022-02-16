@@ -6,7 +6,7 @@ import {Button} from "../../../CommonComponent/Button/MyButton/Button";
 import deleteBasket from '../../Header/image/deleteBasket.svg'
 import classes from "../../../CommonComponent/Button/MyButton/Button.module.css";
 import classTodo from './Todolist.module.css'
-import {FilterValueType} from "../AppTodolistWithReducer";
+import {FilterValueType} from "../../store/todolist-reducer";
 
 export type  PropsType = {
     id: string,

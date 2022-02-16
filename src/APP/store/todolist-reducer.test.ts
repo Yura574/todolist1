@@ -6,7 +6,7 @@ import {
     removeTodolistAC,
     todolistReducer
 } from "./todolist-reducer";
-import {TodolistType} from "../Body/AppTodolistWithReducer";
+import {TodolistType} from "../Body/AppTodolist";
 
 
 let todolistId1 = v1()

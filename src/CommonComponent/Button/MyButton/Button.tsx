@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Button.module.css";
-import {FilterValueType} from "../../../APP/Body/AppTodolistWithReducer";
+import {FilterValueType} from "../../../APP/store/todolist-reducer";
 
 
 

@@ -1,12 +1,11 @@
-import {TasksType} from "../Body/AppTodolist";
 import { todolistId1, todolistId2} from "./todolist-reducer";
 import {
-    addEmptyArrayNewTodolistAC,
-    addNewTaskAC,
-    changeTaskStatusAC, deleteArrayTasksAC,
+
+    addNewTaskAC, addTodolistAC,
+    changeTaskStatusAC,
     editTaskTitleAC,
-    removeTaskAC,
-    taskReducer
+    removeTaskAC, removeTodolistAC,
+    taskReducer, TasksType
 } from "./task-reducer";
 import {v1} from "uuid";
 
@@ -59,14 +58,14 @@ test('title task should be changed', () =>{
 
 test('empty array should be add', () => {
     const newTodolistId  = v1()
-    const endState = taskReducer(initialState, addEmptyArrayNewTodolistAC(newTodolistId ) )
+    const endState = taskReducer(initialState, addTodolistAC(newTodolistId ) )
 
     expect(endState[newTodolistId].length).toBe(0)
     expect(endState[newTodolistId]).toBeTruthy()
 })
 
 test('array tasks should be deleted', () => {
-    const endState = taskReducer(initialState, deleteArrayTasksAC(todolistId2))
+    const endState = taskReducer(initialState, removeTodolistAC(todolistId2))
 
     expect(endState[todolistId2]).toBeFalsy()
 })

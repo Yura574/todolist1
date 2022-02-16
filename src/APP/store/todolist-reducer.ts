@@ -1,8 +1,12 @@
 import {v1} from "uuid";
-import {FilterValueType, TodolistType} from "../Body/AppTodolistWithReducer";
 
-
-type StateType = Array<TodolistType>
+export type FilterValueType = 'All' | 'Completed' | 'Active'
+export type TodolistType = {
+    id: string
+    title: string
+    filter: FilterValueType
+}
+export type TodolistStateType = Array<TodolistType>
 type ActionType = RemoveTodolistType | AddTodolistACType | EditTodolistTitleACType | ChangeFilterTodolistAC
 
 
@@ -29,12 +33,12 @@ type ActionType = RemoveTodolistType | AddTodolistACType | EditTodolistTitleACTy
 export let todolistId1 = v1()
 export let todolistId2 = v1()
 
-const initialState: Array<TodolistType> = [
+const initialState: TodolistStateType= [
     {id: todolistId1, title: 'what to learn', filter: 'All'},
     {id: todolistId2, title: 'what to buy', filter: 'All'}
 ]
 
-export function todolistReducer(state: StateType = initialState, action: ActionType): StateType {
+export function todolistReducer(state: TodolistStateType = initialState, action: ActionType): TodolistStateType {
     switch (action.type) {
         case "REMOVE-TODOLIST":
             return state.filter(tl => tl.id !== action.todolistId)
@@ -49,7 +53,7 @@ export function todolistReducer(state: StateType = initialState, action: ActionT
             return state.map(tl => tl.id === action.todolistId ? {...tl, filter: action.filterValue} : tl)
 
         default:
-            throw new Error("type wasn't find")
+            return state
     }
 
 }

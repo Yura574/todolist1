@@ -1,8 +1,10 @@
 import {v1} from "uuid";
 import {todolistId1, todolistId2} from "./todolist-reducer";
 import {PropsType} from "../Body/Todolist/TodoList";
-import {TasksType} from "../Body/AppTodolistWithReducer";
 
+export type TasksType = {
+    [key: string]: Array<PropsType>
+}
 
 type ActionsType = RemoveTaskACType | AddNewTaskACType | ChangeTaskStatusACType | EditTaskTitleACType
     | AddTodolistACType | RemoveTodolistACType
@@ -56,7 +58,6 @@ const initialState: TasksType = {
 
 
 export const taskReducer = (state: TasksType = initialState, action: ActionsType): TasksType => {
-    debugger
     switch (action.type) {
         case "REMOVE_TASK":
             return {
@@ -93,7 +94,7 @@ export const taskReducer = (state: TasksType = initialState, action: ActionsType
 
 
         default:
-            throw new Error(" action type wasn't find")
+            return state
     }
 }
 
@@ -120,11 +121,11 @@ export const editTaskTitleAC = (todolistId: string, taskId: string, title: strin
     taskId,
     title
 })
-export const addEmptyArrayNewTodolistAC = (todolistId: string): AddTodolistACType => ({
+export const addTodolistAC = (todolistId: string): AddTodolistACType => ({
     type: "ADD_TODOLIST",
     todolistId
 })
-export const deleteArrayTasksAC = (todolistId: string): RemoveTodolistACType => ({
+export const removeTodolistAC = (todolistId: string): RemoveTodolistACType => ({
     type: "REMOVE_TODOLIST",
     todolistId
 })
