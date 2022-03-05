@@ -1,4 +1,4 @@
-import {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 
 
 type EditableSpan = {
@@ -6,7 +6,8 @@ type EditableSpan = {
     callback: (title: string) => void
 }
 
-export function EditableSpan(props: EditableSpan) {
+export const EditableSpan = React.memo((props: EditableSpan) =>  {
+    console.log('render EditableSpan')
     const [edit, setEdit] = useState(false)
     const [title, setTitle] = useState(props.title)
 
@@ -36,4 +37,4 @@ export function EditableSpan(props: EditableSpan) {
 </span>
 
     )
-}
+})

@@ -6,7 +6,8 @@ type CheckboxType ={
     changeTaskStatus: (taskId: string, isDone: boolean)=> void
 }
 
-export function Checkbox(props:CheckboxType) {
+export const Checkbox = React.memo((props:CheckboxType) => {
+    console.log('render Checkbox')
     const changeStatus = (e: ChangeEvent<HTMLInputElement>) => {
         props.changeTaskStatus(props.id, e.currentTarget.checked)
     }
@@ -17,4 +18,4 @@ export function Checkbox(props:CheckboxType) {
 
         />
     )
-}
+})

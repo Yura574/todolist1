@@ -5,13 +5,12 @@ import {
     changeTaskStatusAC,
     editTaskTitleAC,
     removeTaskAC, removeTodolistAC,
-    taskReducer, TasksType
+    taskReducer, TasksStateType
 } from "./task-reducer";
 import {v1} from "uuid";
 
-export const a = 3
 
-let initialState: TasksType
+let initialState: TasksStateType
 
 beforeEach(() => {
     initialState = {

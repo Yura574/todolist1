@@ -1,9 +1,9 @@
 import {v1} from "uuid";
 import {todolistId1, todolistId2} from "./todolist-reducer";
-import {PropsType} from "../Body/Todolist/TodoList";
+import {TaskType} from "../Body/Todolist/TodoList";
 
-export type TasksType = {
-    [key: string]: Array<PropsType>
+export type TasksStateType = {
+    [key: string]: Array<TaskType>
 }
 
 type ActionsType = RemoveTaskACType | AddNewTaskACType | ChangeTaskStatusACType | EditTaskTitleACType
@@ -43,7 +43,7 @@ type RemoveTodolistACType = {
 }
 
 
-const initialState: TasksType = {
+const initialState: TasksStateType = {
     [todolistId1]: [
         {id: v1(), title: 'NodeJS', isDone: true},
         {id: v1(), title: 'CSS', isDone: true},
@@ -57,7 +57,7 @@ const initialState: TasksType = {
 }
 
 
-export const taskReducer = (state: TasksType = initialState, action: ActionsType): TasksType => {
+export const taskReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
     switch (action.type) {
         case "REMOVE_TASK":
             return {
@@ -65,7 +65,7 @@ export const taskReducer = (state: TasksType = initialState, action: ActionsType
                 [action.todolistId]: state[action.todolistId].filter(t => t.id !== action.taskId)
             }
         case "ADD_NEW_TASK_TYPE":
-            const newTask: PropsType = {id: action.taskId, title: action.title, isDone: false}
+            const newTask: TaskType = {id: action.taskId, title: action.title, isDone: false}
             return {
                 ...state,
                 [action.todolistId]: [...state[action.todolistId], newTask]

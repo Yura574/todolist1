@@ -13,7 +13,8 @@ type ButtonType ={
     deactivate?:()=> void
 }
 
-export function Button(props: ButtonType){
+export const Button = React.memo ((props: ButtonType) =>{
+    console.log('render Button')
     const setFilter = () =>{
         if(props.deactivate){
             props.callback()
@@ -29,4 +30,4 @@ export function Button(props: ButtonType){
             onClick={setFilter}>{props.img ? <img src={props.img}  alt={''}/> : props.nameButton}
         </button>
     )
-}
+})

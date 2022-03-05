@@ -4,15 +4,14 @@ import {
     changeFilterTodolistAC,
     editTodolistTitleAC,
     removeTodolistAC,
-    todolistReducer
+    todolistReducer, TodolistStateType
 } from "./todolist-reducer";
-import {TodolistType} from "../Body/AppTodolist";
 
 
 let todolistId1 = v1()
 let todolistId2 = v1()
 
-let initialState: Array<TodolistType>
+let initialState: TodolistStateType
 
 beforeEach(() => {
     initialState = [

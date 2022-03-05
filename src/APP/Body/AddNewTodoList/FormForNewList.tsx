@@ -6,8 +6,9 @@ type FormForNewListType = {
     deactivate: ()=> void
 }
 
-export function FormForNewList(props: FormForNewListType) {
+export const FormForNewList = React.memo((props: FormForNewListType) =>  {
+    console.log('render FormForNewList')
     return (
         <span ><AddItemForm addItem={props.addTodoList} deactivate={props.deactivate}/></span>
     )
-}
+})
